@@ -24,7 +24,7 @@ The kernel functions are centered at K mixture component locations, and they are
 
 ### 2. Inference for the mixture componenet model
 
-in contrast to Wadsworth and Tawn (2019) [[1]](#1), this approach is a coherent model with a well-defined likelihood:
+In contrast to Wadsworth and Tawn (2019) [[1]](#1), this approach is a coherent model with a well-defined likelihood:
 
 ![equation](https://latex.codecogs.com/gif.latex?%5Cvarphi%5Cleft%28Y_t%28%5Cboldsymbol%7Bs%7D_i%29%7CX%5E*_t%28%5Cboldsymbol%7Bs%7D%29%2C%5Cboldsymbol%7B%5Ctheta%7D%28%5Cboldsymbol%7Bs%7D%29%2Cp%2C%5Cphi%28%5Cboldsymbol%7Bs%7D%29%2C%5Ctau%5E2%5Cright%29%3D%20%5Cleft%5C%7B%5Cbegin%7Bmatrix%7D%20%5CPhi%5Cleft%28%5Cfrac%7BF_%7BX%7C%5Cphi_i%2C%5Ctau%5E2%7D%5E%7B-1%7D%28p%29-X%5E*_t%28%5Cboldsymbol%7Bs%7D_i%29%7D%7B%5Ctau%7D%5Cright%29%26%20%5Ctext%7Bif%20%7D%20Y_t%28%5Cboldsymbol%7Bs%7D_i%29%5Cleq%20u_t%28%5Cboldsymbol%7Bs%7D_i%29%2C%5C%5C%20%5Cphi%5Cleft%28F_X%5E%7B-1%7D%5Ccirc%20F_Y%28Y_t%28%5Cboldsymbol%7Bs%7D_i%29%29%5Crvert%20X%5E*_t%28%5Cboldsymbol%7Bs%7D_i%29%2C%5Ctau%5E2%5Cright%29%5Cfrac%7Bf_Y%28Y_t%28%5Cboldsymbol%7Bs%7D_i%29%29%7D%7Bf_X%5Cleft%28F_X%5E%7B-1%7D%5Ccirc%20F_Y%28Y_t%28%5Cboldsymbol%7Bs%7D_i%29%29%5Cright%29%7D%26%20%5Ctext%7Bif%20%7D%20Y_t%28%5Cboldsymbol%7Bs%7D_i%29%3E%20u_t%28%5Cboldsymbol%7Bs%7D_i%29.%20%5Cend%7Bmatrix%7D%5Cright.)
 

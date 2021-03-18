@@ -59,12 +59,12 @@ def invGamma_prior(params, hyper_params):
 def R_powered_prior(params, hyper_params):
    x = params #R_powered with one element
    phi = hyper_params[0]
-   s = hyper_params[1]  #gamma
-   x_phi = x**(1/phi)
    
    if x<0:
        return -np.inf
    else:
+       s = hyper_params[1]  #gamma
+       x_phi = x**(1/phi)
        dens = np.log(s/(2 * np.pi))/2 - 3 * np.log(x_phi)/2 - s/(2 * x_phi) + (1/phi-1)*np.log(x)-np.log(phi)
    return dens
 
