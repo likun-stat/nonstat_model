@@ -2,7 +2,8 @@
 
 ## Research ongoing with Dr. Mark Risser
 
-[![Build Status](https://github.com/likun-stat/nonstat_model/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/likun-stat/nonstat_model/actions)
+[![Build Status](https://github.com/likun-stat/nonstat_model/actions/workflows/python-package-conda.yml/badge.svg?branch=main)](https://github.com/likun-stat/nonstat_model/actions)
+
 
 We try to model dependence in extremes of spatial processes: 
 
