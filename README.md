@@ -2,7 +2,7 @@
 
 ## Research ongoing with Dr. Mark Risser
 
-[//]: #([slides from JSM](https://drive.google.com/file/d/1xUYZZ9jN4xxxkg57UQWvTDuV3Jp6d4p2/view?usp=sharing) .)
+[![Build Status](https://github.com/likun-stat/nonstat_model/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/likun-stat/nonstat_model/actions)
 
 We try to model dependence in extremes of spatial processes: 
 
