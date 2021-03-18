@@ -11,6 +11,7 @@ We try to model dependence in extremes of spatial processes:
 
 ### 1.  Flexible Spatial Modeling
 We wish to fit spatial models encompassing both long-range asymptotic independence and short-range weakening dependence strength that leads to either asymptotic dependence or independence.
+
 ![equation](https://latex.codecogs.com/gif.latex?X%5E*%28%5Cboldsymbol%7Bs%7D%29%3DR%28%5Cboldsymbol%7Bs%7D%29%5E%7B%5Cphi%28%5Cboldsymbol%7Bs%7D%29%7DW%28%5Cboldsymbol%7Bs%7D%29%2C)
 
 where
