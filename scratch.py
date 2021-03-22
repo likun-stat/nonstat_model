@@ -91,7 +91,7 @@ thresh_X_above =  utils.qRW_me_interp(prob_above, xp, surv_p, tau_sqd, phi, gamm
 
 
 
-# ------------ 4. Marginal transformation -----------------
+# ------------ 4. Save initial values -----------------
 initial_values   = {'phi':phi,
                     'gamma':gamma,
                     'tau_sqd':tau_sqd,

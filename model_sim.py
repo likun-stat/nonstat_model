@@ -1037,9 +1037,12 @@ def loc0_gev_update_mixture_me_likelihood(data, params, Y, X_s, cen, cen_above, 
   max_support = Loc - Scale/Shape
   max_support[Shape>0] = np.inf
   
+  # When cen is not updated, the best thing we can do is to make sure the unifs is not too far from [below, above].
+  tmp=pgev(Y[~cen & ~cen_above], Loc[~cen & ~cen_above], Scale[~cen & ~cen_above], Shape[~cen & ~cen_above])
+  
   # If the parameters imply support that is not consistent with the data,
   # then reject the parameters.
-  if np.any(Y > max_support):
+  if np.any(Y > max_support) or np.min(tmp)<prob_below-0.05 or np.max(tmp)>prob_above+0.05:
       return -np.inf
   
   # cen = which_censored(Y, Loc, Scale, Shape, prob_below) # 'cen' isn't altered in Global
@@ -1075,9 +1078,12 @@ def loc1_gev_update_mixture_me_likelihood(data, params, Y, X_s, cen, cen_above, 
   max_support = Loc - Scale/Shape
   max_support[Shape>0] = np.inf
   
+  # When cen is not updated, the best thing we can do is to make sure the unifs is not too far from [below, above].
+  tmp=pgev(Y[~cen & ~cen_above], Loc[~cen & ~cen_above], Scale[~cen & ~cen_above], Shape[~cen & ~cen_above])
+  
   # If the parameters imply support that is not consistent with the data,
   # then reject the parameters.
-  if np.any(Y > max_support):
+  if np.any(Y > max_support) or np.min(tmp)<prob_below-0.05 or np.max(tmp)>prob_above+0.05:
       return -np.inf
   
   # cen = which_censored(Y, Loc, Scale, Shape, prob_below) # 'cen' isn't altered in Global
@@ -1128,9 +1134,12 @@ def scale_gev_update_mixture_me_likelihood(data, params, Y, X_s, cen, cen_above,
   max_support = Loc - Scale/Shape
   max_support[Shape>0] = np.inf
   
+  # When cen is not updated, the best thing we can do is to make sure the unifs is not too far from [below, above].
+  tmp=pgev(Y[~cen & ~cen_above], Loc[~cen & ~cen_above], Scale[~cen & ~cen_above], Shape[~cen & ~cen_above])
+  
   # If the parameters imply support that is not consistent with the data,
   # then reject the parameters.
-  if np.any(Y > max_support):
+  if np.any(Y > max_support) or np.min(tmp)<prob_below-0.05 or np.max(tmp)>prob_above+0.05:
       return -np.inf
   
   # cen = which_censored(Y, Loc, Scale, Shape, prob_below) # 'cen' isn't altered in Global
@@ -1184,9 +1193,12 @@ def shape_gev_update_mixture_me_likelihood(data, params, Y, X_s, cen, cen_above,
   max_support = Loc - Scale/Shape
   max_support[Shape>0] = np.inf
   
+  # When cen is not updated, the best thing we can do is to make sure the unifs is not too far from [below, above].
+  tmp=pgev(Y[~cen & ~cen_above], Loc[~cen & ~cen_above], Scale[~cen & ~cen_above], Shape[~cen & ~cen_above])
+  
   # If the parameters imply support that is not consistent with the data,
   # then reject the parameters.
-  if np.any(Y > max_support):
+  if np.any(Y > max_support) or np.min(tmp)<prob_below-0.05 or np.max(tmp)>prob_above+0.05:
       return -np.inf
   
   # cen = which_censored(Y, Loc, Scale, Shape, prob_below) # 'cen' isn't altered in Global
