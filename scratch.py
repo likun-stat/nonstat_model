@@ -14,7 +14,7 @@ range = 1        # Matern range
 nu =  3/2        # Matern smoothness
 
 n_s = 70         # Number of sites
-n_t = 40         # Number of time points
+n_t = 64         # Number of time points
 tau_sqd = 10     # Nugget SD
 
 phi = 0.55       # For R
@@ -659,5 +659,28 @@ plt.hlines(X_s[7, t_chosen], 0, n_updates, colors='r', linestyles='--');
 
 
 
-
-
+## -------------------------------------------------------
+## --------------------- For Sampler ---------------------
+## -------------------------------------------------------
+from pickle import load
+with open('nonstat_progress_0.pkl', 'rb') as f:
+     Y_tmp=load(f)
+     cen_tmp=load(f)
+     cen_above_tmp=load(f)
+     initial_values_tmp=load(f)
+     sigma_m=load(f)
+     prop_sigma=load(f)
+     iter_tmp=load(f)
+     phi_trace_tmp=load(f)
+     theta_c_trace_tmp=load(f)
+     beta_loc0_trace_tmp=load(f)
+     beta_loc1_trace_tmp=load(f)
+     beta_scale_trace_tmp=load(f)
+     beta_shape_trace_tmp=load(f)
+                   
+     X_s_1t_trace=load(f)
+     R_1t_trace=load(f)
+     Y_onetime=load(f)
+     X_onetime=load(f)
+     X_s_onetime=load(f)
+     R_onetime=load(f)

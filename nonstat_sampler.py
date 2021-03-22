@@ -47,7 +47,7 @@ if __name__ == "__main__":
    comm = MPI.COMM_WORLD
    rank = comm.Get_rank()
    size = comm.Get_size()
-   thinning = 10; echo_interval = 50; n_updates = 5001
+   thinning = 10; echo_interval = 50; n_updates = 40001
   
    # Load data input
    with open('test.pkl', 'rb') as f:
@@ -65,7 +65,7 @@ if __name__ == "__main__":
    random_generator = np.random.RandomState()
   
    # Constants to control adaptation of the Metropolis sampler
-   c_0 = 1
+   c_0 = 10
    c_1 = 0.8
    offset = 3  # the iteration offset
    r_opt_1d = .41
@@ -305,20 +305,20 @@ if __name__ == "__main__":
            Scale = np.tile(scale, n_t)
            Scale = Scale.reshape((n_s,n_t),order='F')
           
-           # Update beta_shape
-           Metr_beta_shape = sampler.static_metr(Design_mat, beta_shape, utils.shape_gev_update_mixture_me_likelihood, 
-                             priors.unif_prior, hyper_params_theta_gev, 2, 
-                             random_generator,
-                             prop_sigma['beta_shape'], sigma_m['beta_shape'], False,
-                             Y, X_s, cen, cen_above, prob_below, prob_above,
-                             tau_sqd, phi, gamma, Loc, Scale, Time, xp, surv_p, den_p, 
-                             thresh_X, thresh_X_above)
-           beta_shape_accept = beta_shape_accept + Metr_beta_shape['acc_prob']
-           beta_shape = Metr_beta_shape['trace'][:,1]
-           beta_shape_trace_within_thinning[:,index_within] = beta_shape
-           shape = Design_mat @beta_shape
-           Shape = np.tile(shape, n_t)
-           Shape = Shape.reshape((n_s,n_t),order='F')
+           # # Update beta_shape
+           # Metr_beta_shape = sampler.static_metr(Design_mat, beta_shape, utils.shape_gev_update_mixture_me_likelihood, 
+           #                   priors.unif_prior, hyper_params_theta_gev, 2, 
+           #                   random_generator,
+           #                   prop_sigma['beta_shape'], sigma_m['beta_shape'], False,
+           #                   Y, X_s, cen, cen_above, prob_below, prob_above,
+           #                   tau_sqd, phi, gamma, Loc, Scale, Time, xp, surv_p, den_p, 
+           #                   thresh_X, thresh_X_above)
+           # beta_shape_accept = beta_shape_accept + Metr_beta_shape['acc_prob']
+           # beta_shape = Metr_beta_shape['trace'][:,1]
+           # beta_shape_trace_within_thinning[:,index_within] = beta_shape
+           # shape = Design_mat @beta_shape
+           # Shape = np.tile(shape, n_t)
+           # Shape = Shape.reshape((n_s,n_t),order='F')
           
            # cen[:] = utils.which_censored(Y, Loc, Scale, Shape, prob_below)
            # cen_above[:] = ~which_censored(Y, Loc, Scale, Shape, prob_above)
