@@ -431,19 +431,19 @@ if __name__ == "__main__":
                        print("Oops. Proposal covariance matrix is now:\n")
                        print(prop_sigma['beta_scale'])
                  
-               sigma_m['beta_shape'] = np.exp(np.log(sigma_m['beta_shape']) + gamma1*(beta_shape_accept/thinning - r_opt_2d))
-               beta_shape_accept = 0
-               prop_sigma['beta_shape'] = prop_sigma['beta_shape'] + gamma2*(np.cov(beta_shape_trace_within_thinning) - prop_sigma['beta_shape'])
-               check_chol_cont = True
-               while check_chol_cont:
-                   try:
-                       # Initialize prop_C
-                       np.linalg.cholesky(prop_sigma['beta_shape'])
-                       check_chol_cont = False
-                   except  np.linalg.LinAlgError:
-                       prop_sigma['beta_shape'] = prop_sigma['beta_shape'] + eps*np.eye(n_covariates)
-                       print("Oops. Proposal covariance matrix is now:\n")
-                       print(prop_sigma['beta_shape'])
+               # sigma_m['beta_shape'] = np.exp(np.log(sigma_m['beta_shape']) + gamma1*(beta_shape_accept/thinning - r_opt_2d))
+               # beta_shape_accept = 0
+               # prop_sigma['beta_shape'] = prop_sigma['beta_shape'] + gamma2*(np.cov(beta_shape_trace_within_thinning) - prop_sigma['beta_shape'])
+               # check_chol_cont = True
+               # while check_chol_cont:
+               #     try:
+               #         # Initialize prop_C
+               #         np.linalg.cholesky(prop_sigma['beta_shape'])
+               #         check_chol_cont = False
+               #     except  np.linalg.LinAlgError:
+               #         prop_sigma['beta_shape'] = prop_sigma['beta_shape'] + eps*np.eye(n_covariates)
+               #         print("Oops. Proposal covariance matrix is now:\n")
+               #         print(prop_sigma['beta_shape'])
           
        # ----------------------------------------------------------------------------------------                
        # -------------------------- Echo & save every 'thinning' steps --------------------------
